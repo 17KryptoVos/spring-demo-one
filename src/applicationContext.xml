@@ -21,7 +21,7 @@
     <!-- Define your "normal" beans here -->
 
     <bean id="myCoach"
-          class="com.kryptovos.SoccerCoach">
+          class="com.kryptovos.BaseballCoach">
     </bean>
 
 </beans>
