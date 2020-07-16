@@ -12,16 +12,24 @@
     Add a logger config to see logging messages.
     - For more detailed logs, set values to "FINEST"
     - For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html
- -->
+    -->
     <bean id="myLoggerConfig" class="com.kryptovos.MyLoggerConfig" init-method="initLogger">
-        <property name="rootLoggerLevel" value="FINE" />
+        <property name="rootLoggerLevel" value="FINE"/>
         <property name="printedLoggerLevel" value="FINE"/>
     </bean>
 
     <!-- Define your "normal" beans here -->
 
+    <!-- Define dependecy -->
+    <bean id="myFortuneService"
+          class="com.kryptovos.HappyFortuneService">
+    </bean>
+
+
     <bean id="myCoach"
           class="com.kryptovos.BaseballCoach">
+        <!-- Set up constructor injection -->
+        <constructor-arg ref="myFortuneService"/>
     </bean>
 
 </beans>
