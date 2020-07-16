@@ -1,6 +1,13 @@
 package com.kryptovos;
 
 public class SoccerCoach implements Coach {
+
+    private FortuneService fortuneService;
+
+    public SoccerCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
     @Override
     public String getDailyWorkout() {
         return "Score 15th goals";
@@ -8,6 +15,6 @@ public class SoccerCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return null;
+        return fortuneService.getFortune();
     }
 }

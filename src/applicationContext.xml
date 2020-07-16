@@ -27,7 +27,7 @@
 
 
     <bean id="myCoach"
-          class="com.kryptovos.BaseballCoach">
+          class="com.kryptovos.SoccerCoach">
         <!-- Set up constructor injection -->
         <constructor-arg ref="myFortuneService"/>
     </bean>
