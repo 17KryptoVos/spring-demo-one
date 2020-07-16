@@ -1,8 +1,14 @@
 package com.kryptovos;
 
+import java.security.PublicKey;
+
 public class BaseballCoach implements Coach {
     // Define private field for the dependecy
     private FortuneService fortuneService;
+
+    // No arg constructor
+    public BaseballCoach() {
+    }
 
     // Define constructor for dependecy injection
     public BaseballCoach(FortuneService fortuneService) {
