@@ -18,18 +18,21 @@
         <property name="printedLoggerLevel" value="FINE"/>
     </bean>
 
-    <!-- Define your "normal" beans here -->
-
     <!-- Define dependecy -->
     <bean id="myFortuneService"
           class="com.kryptovos.HappyFortuneService">
     </bean>
 
+    <!-- Define your "coach" beans here -->
 
     <bean id="myCoach"
           class="com.kryptovos.SoccerCoach">
         <!-- Set up constructor injection -->
         <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+    <bean id="myCricketCoach" class="com.kryptovos.CricketCoach">
+        <property name="fortuneService" ref="myFortuneService"/>
     </bean>
 
 </beans>
