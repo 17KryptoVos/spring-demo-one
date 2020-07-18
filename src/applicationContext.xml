@@ -33,6 +33,8 @@
 
     <bean id="myCricketCoach" class="com.kryptovos.CricketCoach" lazy-init="true">
         <property name="fortuneService" ref="myFortuneService"/>
+        <property name="emailAdddress" value="thebestcoach@blabla.com"/>
+        <property name="team" value="Havana Bee's"/>
     </bean>
 
 </beans>

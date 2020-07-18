@@ -7,6 +7,9 @@ public class CricketCoach implements Coach {
 
     private FortuneService fortuneService;
 
+    private String emailAdddress;
+    private String team;
+
     public CricketCoach() {
         System.out.println("Hello from inside the no-arg constructor");
     }
@@ -22,7 +25,25 @@ public class CricketCoach implements Coach {
     }
 
     public void setFortuneService(FortuneService fortuneService) {
-        System.out.println("Hello from inside the setter");
+        System.out.println("CricketCoach: Hello from inside the setter fortuneservice");
         this.fortuneService = fortuneService;
+    }
+
+    public void setEmailAdddress(String emailAdddress) {
+        System.out.println("CricketCoach: Hello from inside the setter for email");
+        this.emailAdddress = emailAdddress;
+    }
+
+    public String getEmailAdddress(){
+        return emailAdddress;
+    }
+
+    public void setTeam(String team) {
+        System.out.println("CricketCoach: Hello from inside the setter for team");
+        this.team = team;
+    }
+
+    public String getTeam(){
+        return team;
     }
 }
