@@ -1,11 +1,23 @@
 package com.kryptovos;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class SadFortuneService implements FortuneService {
 
     private final String[] FORTUNES = {"Bad weather", "Stupid school", "Annoying music", "Lame stuff", "Stuff is boring"};
+    private Random rand;
+
+    {
+        try {
+            rand = SecureRandom.getInstanceStrong();
+            System.out.println("Used algorithm --> " + ((SecureRandom) rand).getAlgorithm());
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public String getFortune() {
@@ -21,7 +33,6 @@ public class SadFortuneService implements FortuneService {
     }
 
     private int getRandomIndex() {
-        Random random = new Random();
-        return random.nextInt(FORTUNES.length);
+        return rand.nextInt(FORTUNES.length);
     }
 }
