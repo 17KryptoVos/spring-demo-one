@@ -26,6 +26,10 @@
           class="com.kryptovos.HappyFortuneService">
     </bean>
 
+    <bean id="mySadFortuneService"
+          class="com.kryptovos.SadFortuneService">
+    </bean>
+
     <!-- Define your "coach" beans here -->
     <bean id="myCoach"
           class="com.kryptovos.SoccerCoach">
@@ -43,6 +47,13 @@
         <property name="emailAdddress" value="${foo.email}"/>
         <property name="team" value="${foo.team}"/>
     </bean>
+
+    <bean id="TheSadCoach"
+          class="com.kryptovos.SadCoach">
+        <!-- Set up constructor injection -->
+        <constructor-arg ref="mySadFortuneService"/>
+    </bean>
+
 
 </beans>
 
